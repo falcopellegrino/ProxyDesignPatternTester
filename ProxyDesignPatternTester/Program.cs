@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Structural = ProxyDesignPatternTester.StructuralCode;
-//using Real = ProxyDesignPatternTester.RealWorldCode;
+using Real = ProxyDesignPatternTester.RealWorldCode;
 //using My = ProxyDesignPatternTester.MyCode;
 
 namespace ProxyDesignPatternTester
@@ -31,9 +31,16 @@ namespace ProxyDesignPatternTester
     //  - RealSubject (Math)
     //      --> defines the real object that the proxy represents. 
 
+    /// <summary>
+    /// MainApp startup class for
+    /// Proxy Design Pattern.
+    /// </summary>
     class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Entry point into console application.
+        /// </summary>
+        static void Main()
         {
             #region Structural code in C#
             // Structural code in C#
@@ -51,6 +58,18 @@ namespace ProxyDesignPatternTester
             #region RealWorld code in C#
             // Real-world code in C#
             // This real-world code demonstrates the Proxy pattern for a Math object represented by a MathProxy object. 
+            
+            // Create math proxy
+            Real.MathProxy mathProxy = new Real.MathProxy();
+
+            // Do the math
+            Console.WriteLine("4 + 2 = " + mathProxy.Add(4, 2));
+            Console.WriteLine("4 - 2 = " + mathProxy.Sub(4, 2));
+            Console.WriteLine("4 * 2 = " + mathProxy.Mul(4, 2));
+            Console.WriteLine("4 / 2 = " + mathProxy.Div(4, 2));
+            
+            // Wait for user
+            Console.ReadKey();
             #endregion
 
             #region My code in C#
