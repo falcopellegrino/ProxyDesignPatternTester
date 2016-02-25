@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Structural = ProxyDesignPatternTester.StructuralCode;
 using Real = ProxyDesignPatternTester.RealWorldCode;
-//using My = ProxyDesignPatternTester.MyCode;
+using My = ProxyDesignPatternTester.MyCode;
 
 namespace ProxyDesignPatternTester
 {
@@ -73,6 +73,13 @@ namespace ProxyDesignPatternTester
             #endregion
 
             #region My code in C#
+            My.CameriereProxy cameriere = new My.CameriereProxy("Franco", "Pellegrino");
+
+            cameriere.PreparaUnPiatto("risotto alla milanese");
+            cameriere.PreparaUnPiatto("spaghetti alla carbonara");
+            cameriere.PreparaUnPiatto("orecchiette con le cime di rapa");
+
+            Console.ReadKey();
             #endregion
         }
     }
